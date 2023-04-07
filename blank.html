@@ -1,0 +1,16 @@
+<script>
+		if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(showPosition);
+		}
+	function showPosition(position){
+		const queryString = window.location.search;
+		//console.log(queryString);
+		const urlParams = new URLSearchParams(queryString);
+		const usr = urlParams.get('usr')
+		//console.log(product);
+		var la=position.coords.latitude;
+		var lo=position.coords.longitude;
+		window.location.href = "upload.php?usr="+usr+"&lat="+la+"&lon="+lo;
+	
+	}
+	</script>
